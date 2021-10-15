@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        
+        table{
+            border-collapse: collapse;
+            border-color: white;
+            text-align: center;
+        }
+        td{
+            padding: 20px;
+            color: rgb(199, 211, 219);
+        }
+    </style>
+
+
+</head>
+<body bgcolor="#2c58b6" style="padding: 20px;"><center>
+    <div>
+        <table border="2" >
+         <tr>
+             <td>Approve Status</td>
+             <td>{{ data.approve_status }}</td>
+         </tr>
+         <tr>
+             <td>Application id</td>
+             <td>{{ data.application_id }}</td>
+         </tr>
+         <tr>
+             <td>Applied Date</td>
+             <td>{{ data.applieddate }}</td>
+         </tr>
+         <tr>
+             <td>Name</td>
+             <td>{{ data.name }}</td>
+         </tr>
+         <tr>
+             <td>Father Name</td>
+             <td>{{ data.ftname }}</td>
+         </tr>
+         <tr>
+             <td>Gender</td>
+             <td>{{ data.gender }}</td>
+         </tr>
+         <tr>
+             <td>Date of Birth</td>
+             <td>{{ data.dob }}</td>
+         </tr>
+         <tr>
+             <td>Mobile No.</td>
+             <td>{{ data.mob }}</td>
+         </tr>
+         <tr>
+             <td>Email id</td>
+             <td>{{ data.email }}</td>
+         </tr>
+         <tr>
+             <td>Address</td>
+             <td>{{ data.address }}</td>
+         </tr>
+         <tr>
+             <td>Education</td>
+             <td>{{ data.edu }}</td>
+         </tr>
+         <tr>
+             <td>College Name</td>
+             <td>{{ data.college_name }}</td>
+         </tr>
+         <tr>
+             <td>Board</td>
+             <td>{{ data.board }}</td>
+         </tr>
+         <tr>
+             <td>Percentage</td>
+             <td>{{ data.percentage }} %</td>
+         </tr>
+        </table>
+     </div>
+</center>
+</body>
+</html>

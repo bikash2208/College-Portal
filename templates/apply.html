@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 10px 10px 10px 0;
+      display: inline-block;
+    }
+
+    input[type=file] {
+      background-color: #f2fbf8;
+      color: rgb(0, 0, 0);
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+    }
+
+    input[type=submit] {
+      background-color: #417af6;
+      color: white;
+      padding: 12px;
+      width: 50%;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #1e4fbb;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #457cf3;
+      padding: 10px 20px 20px 20px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 20%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body bgcolor="#2c58b6">
+
+  <h2 style="color: #ccc;">Admission Form for B.Tech in CSE</h2>
+  <div class="container">
+    <center>
+      <h3>Personal Informations</h3>
+    </center>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-25">
+          <label for="name">Applicant Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" maxlength="30" required name="name"   placeholder="Enter your name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="ftname">Father Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="ftname" maxlength="30" required placeholder="Enter your father name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="gender">Gender</label>
+        </div>
+        <div class="col-75">
+          <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="dob">Date of birth</label>
+        </div>
+        <div class="col-75">
+          <input type="date" id="dob" name="dob" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="mob">Mobile No</label>
+        </div>
+        <div class="col-75">
+          <input type="number" name="mob" maxlength="10" required placeholder="Enter your mobile number">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="email">Email id</label>
+        </div>
+        <div class="col-75">
+          <input type=email name="email" maxlength="50" required  placeholder="Enter your email id">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="address">Address</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="address" maxlength="50" required placeholder="Enter your address">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="pincode">Pin Code</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="pincode" maxlength="6" required placeholder="Enter your pincode">
+        </div>
+      </div>
+  </div>
+  <br>
+  <div class="container">
+    <center>
+      <h3>Academic Informations</h3>
+    </center>
+      <div class="row">
+        <div class="col-25">
+          <label for="qualification">Qualification</label>
+        </div>
+        <div class="col-75">
+          <select id="edu" name="edu" required>
+            <option value="">Select Education</option>
+            <option value="12th">12th</option>
+            <option value="Diploma">Diploma</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="college_name">College Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="college_name" maxlength="30" required placeholder="Enter your college name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="board_name">Board Name</label>
+        </div>
+        <div class="col-75">
+          <select id="edu" name="board" required>
+            <option value="">Select Board</option>
+            <option value="State Board">State Board</option>
+            <option value="CBSE">CBSE</option>
+            <option value="ICSE">ICSE</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="percentage">Marks in %</label>
+        </div>
+        <div class="col-75">
+          <input type="number" name="percentage" maxlength="5" required placeholder="Enter your markse in percentage">
+        </div>
+      </div>
+  </div><br>
+  <div class="container">
+    <center>
+      <h3>Documentations</h3>
+    </center>
+      <div class="row">
+        <div class="col-25">
+          <label for="pic">Photo</label>
+        </div>
+        <div class="col-75">
+          <input type="file" id="pfile" name="pfile" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="signature">Signature</label>
+        </div>
+        <div class="col-75">
+          <input type="file" id="sfile" name="sfile" required>
+        </div>
+      </div>
+  </div><br>
+  <br>
+  <div>
+    <center><input type="submit" value="Submit"></center>
+  </div>
+  </form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome college walon</h1>
+    <br>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Application ID</th>
+          <th>Status</th>
+        </tr>
+        {% for user in data %}
+        <tr>
+          <td>{{user.name}}</td>
+          <td>{{user.application_id}}</td>
+          {% if user.approve_status == null %}
+          <td>
+            <input type="submit" value="Approve">
+            <input type="submit" value="Rejected">
+          </td>
+          {% else %}
+            <td>{{user.approve_status}}</td>
+          {%endif%}          
+        </tr>
+        {% endfor %}
+      </table>
+</body>
+</html>
